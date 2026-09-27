@@ -1,0 +1,17 @@
+medicine,aliases,class,diabetes,high_blood_pressure,kidney_disease,notes,action
+paracetamol,acetaminophen,analgesic,generally_ok,generally_ok,caution,Follow the product label. Excessive doses can seriously damage the liver.,Check label; seek professional advice if unsure.
+ibuprofen,,NSAID,caution,caution,high_caution,NSAID. Can be a concern with high blood pressure and kidney problems.,Ask a pharmacist/doctor before use if you have these conditions.
+naproxen,,NSAID,caution,caution,high_caution,NSAID. Can be a concern with high blood pressure and kidney problems.,Ask a pharmacist/doctor before use if you have these conditions.
+aspirin,acetylsalicylic acid,NSAID/antiplatelet,caution,caution,caution,FDA advises checking with a doctor before aspirin products in some people with diabetes or when taking blood thinners.,Do not use for self-treatment without checking the label and relevant medical advice.
+pseudoephedrine,,nasal decongestant,high_caution,high_caution,caution,Decongestant. Can be unsuitable for people with diabetes or high blood pressure without professional advice.,Ask a pharmacist/doctor before use.
+phenylephrine,,nasal decongestant,high_caution,high_caution,caution,Decongestant. Check with a healthcare professional if you have diabetes or high blood pressure.,Ask a pharmacist/doctor before use.
+cetirizine,,antihistamine,generally_ok,generally_ok,caution,Kidney function can affect dosing.,Check the product label and ask a professional if you have kidney disease.
+loratadine,,antihistamine,generally_ok,generally_ok,caution,Dose/use may need consideration with significant kidney or liver problems.,Check the product label and ask a professional if you have kidney disease.
+metformin,,diabetes medicine,prescription_only,generally_ok,high_caution,"Used for type 2 diabetes. Kidney function is important; some medicines, including NSAIDs, may interact.",Use only as prescribed and discuss other medicines with a clinician/pharmacist.
+lisinopril,,ACE inhibitor,prescription_only,prescription_only,caution,Blood-pressure medicine. Kidney function and other medicines can affect safety.,Use only as prescribed; discuss kidney problems and other medicines with a clinician.
+losartan,,ARB,prescription_only,prescription_only,caution,Blood-pressure medicine. Kidney function and other medicines can affect safety.,Use only as prescribed.
+amlodipine,,calcium channel blocker,prescription_only,prescription_only,generally_ok,Blood-pressure medicine. Individual circumstances and other medicines still matter.,Use only as prescribed.
+atenolol,,beta blocker,caution,prescription_only,caution,Can interact with diabetes medicines and some other medicines; kidney function may matter.,Use only as prescribed and tell your clinician/pharmacist about other medicines.
+hydrochlorothiazide,HCTZ,diuretic,caution,prescription_only,caution,Diuretic used for blood pressure. Can affect electrolytes and glucose control.,Use only as prescribed and monitor as directed.
+omeprazole,,proton pump inhibitor,generally_ok,generally_ok,caution,Check for medicine interactions and individual kidney-related considerations.,Follow the label or prescription; ask a professional if you have kidney disease.
+amoxicillin,,antibiotic,generally_ok,generally_ok,caution,Kidney function can affect dosing for some antibiotics.,Use only when appropriately prescribed and follow the prescription.
