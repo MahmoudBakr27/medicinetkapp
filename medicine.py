@@ -2,10 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import csv
 
-
-# ==========================================
-# LOAD MEDICINE DATABASE
-# ==========================================
+#LOAD MEDICINE DATABASE
 
 try:
     with open("medicine_safety_starter.csv", "r", encoding="utf-8") as file:
@@ -15,11 +12,7 @@ except FileNotFoundError:
     medicines = []
     print("ERROR: medicine_safety_starter.csv was not found.")
 
-
-# ==========================================
-# CHECK MEDICINE
-# ==========================================
-
+#CHECK MEDICINE
 def check_medicine():
 
     medicine_name = medicine_entry.get().strip().lower()
@@ -31,7 +24,7 @@ def check_medicine():
         )
         return
 
-    # Find medicine
+    #Find medicine
     medicine = None
 
     for item in medicines:
@@ -43,7 +36,7 @@ def check_medicine():
             medicine = item
             break
 
-    # Medicine not found
+    #Medicine not found
     if medicine is None:
 
         result_text.delete("1.0", tk.END)
@@ -62,14 +55,14 @@ def check_medicine():
 
         return
 
-    # Get user conditions
+    #Get user conditions
     has_diabetes = diabetes_var.get()
     has_high_bp = blood_pressure_var.get()
     has_kidney = kidney_var.get()
 
     warnings = []
 
-    # Diabetes
+    #Diabetes
     if has_diabetes == "Yes":
 
         if medicine["diabetes"] == "high_caution":
@@ -78,7 +71,7 @@ def check_medicine():
         elif medicine["diabetes"] == "caution":
             warnings.append("⚠ Diabetes: CAUTION")
 
-    # Blood pressure
+    #Blood pressure
     if has_high_bp == "Yes":
 
         if medicine["high_blood_pressure"] == "high_caution":
@@ -87,7 +80,7 @@ def check_medicine():
         elif medicine["high_blood_pressure"] == "caution":
             warnings.append("⚠ Blood pressure: CAUTION")
 
-    # Kidney disease
+    #Kidney disease
     if has_kidney == "Yes":
 
         if medicine["kidney_disease"] == "high_caution":
@@ -96,10 +89,8 @@ def check_medicine():
         elif medicine["kidney_disease"] == "caution":
             warnings.append("⚠ Kidney disease: CAUTION")
 
-    # ==========================================
-    # DISPLAY RESULT
-    # ==========================================
 
+    #DISPLAY RESULT
     result_text.delete("1.0", tk.END)
 
     result_text.insert(
@@ -118,7 +109,7 @@ def check_medicine():
         f"Class: {medicine['class']}\n\n"
     )
 
-    # Determine status
+    #Determine status
     if any("HIGH CAUTION" in warning for warning in warnings):
 
         status = "🔴 HIGH CAUTION"
@@ -151,7 +142,7 @@ def check_medicine():
         f"Status: {status}\n\n"
     )
 
-    # Warnings
+    #Warnings
     if warnings:
 
         result_text.insert(
@@ -176,14 +167,14 @@ def check_medicine():
             "you entered in this starter database.\n\n"
         )
 
-    # Notes
+    #Notes
     result_text.insert(
         tk.END,
         "Notes:\n"
         f"{medicine['notes']}\n\n"
     )
 
-    # Action
+    #Action
     result_text.insert(
         tk.END,
         "Recommended action:\n"
@@ -202,10 +193,8 @@ def check_medicine():
     )
 
 
-# ==========================================
-# CLEAR BUTTON
-# ==========================================
 
+#CLEAR BUTTON
 def clear_form():
 
     medicine_entry.delete(0, tk.END)
@@ -222,10 +211,8 @@ def clear_form():
     )
 
 
-# ==========================================
-# MAIN WINDOW
-# ==========================================
 
+#MAIN WINDOW
 root = tk.Tk()
 
 root.title("Medicine Safety Checker")
@@ -235,10 +222,8 @@ root.geometry("700x650")
 root.resizable(False, False)
 
 
-# ==========================================
-# TITLE
-# ==========================================
 
+#TITLE
 title_label = tk.Label(
     root,
     text="Medicine Safety Checker",
@@ -257,10 +242,7 @@ subtitle_label = tk.Label(
 subtitle_label.pack()
 
 
-# ==========================================
-# MEDICINE INPUT
-# ==========================================
-
+#MEDICINE INPUT
 medicine_frame = tk.Frame(root)
 
 medicine_frame.pack(pady=20)
@@ -283,10 +265,8 @@ medicine_entry = tk.Entry(
 medicine_entry.pack(side=tk.LEFT)
 
 
-# ==========================================
-# CONDITIONS
-# ==========================================
 
+#CONDITIONS
 conditions_frame = tk.LabelFrame(
     root,
     text="Health conditions",
@@ -308,7 +288,7 @@ blood_pressure_var = tk.StringVar(value="No")
 kidney_var = tk.StringVar(value="No")
 
 
-# Diabetes
+#Diabetes
 tk.Label(
     conditions_frame,
     text="Diabetes:"
@@ -333,7 +313,7 @@ ttk.Combobox(
 )
 
 
-# Blood pressure
+#Blood pressure
 tk.Label(
     conditions_frame,
     text="High blood pressure:"
@@ -358,7 +338,7 @@ ttk.Combobox(
 )
 
 
-# Kidney
+#Kidney
 tk.Label(
     conditions_frame,
     text="Kidney disease:"
@@ -382,15 +362,10 @@ ttk.Combobox(
     padx=10
 )
 
-
-# ==========================================
-# BUTTONS
-# ==========================================
-
+#BUTTONS
 button_frame = tk.Frame(root)
 
 button_frame.pack(pady=20)
-
 
 check_button = tk.Button(
     button_frame,
@@ -414,10 +389,7 @@ clear_button = tk.Button(
 clear_button.pack(side=tk.LEFT, padx=10)
 
 
-# ==========================================
-# STATUS
-# ==========================================
-
+#STATUS
 status_label = tk.Label(
     root,
     text="Ready",
@@ -427,10 +399,7 @@ status_label = tk.Label(
 status_label.pack(pady=5)
 
 
-# ==========================================
-# RESULT BOX
-# ==========================================
-
+#RESULT BOX
 result_frame = tk.LabelFrame(
     root,
     text="Result",
@@ -460,9 +429,5 @@ result_text.pack(
     expand=True
 )
 
-
-# ==========================================
-# START APP
-# ==========================================
 
 root.mainloop()
